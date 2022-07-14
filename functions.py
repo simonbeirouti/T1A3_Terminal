@@ -22,7 +22,7 @@ def results_table(player, community, opponent):
     table.add_column("Opponents Cards", justify="right", style="cyan")
 
     table.add_row(f"{player}", f"{community}", f"{opponent}")
-    with open('results.txt', 'a') as f:
+    with open('./files/results.txt', 'a') as f:
         f.write(f"\nPlayers cards: {player}")
         f.write(f"\nOpponents cards: {opponent}")
         f.write(f"\nCommunity cards:{community}\n")
