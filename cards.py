@@ -20,7 +20,7 @@ with Progress() as progress:
         progress.update(task, advance=1)
         time.sleep(0.05)
 
-with open('cards.txt', 'a') as f:
+with open('cards.txt', 'w+') as f:
     for i in range(len(cards)):
         for j in range(len(suits)):
             f.write(cards[i] + suits[j] + '\n')
