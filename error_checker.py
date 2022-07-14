@@ -12,7 +12,7 @@ with Progress() as progress:
         time.sleep(0.1)
 
 def count_cards():
-    with open('cards.txt', 'r') as f:
+    with open('./files/cards.txt', 'r') as f:
         lines = sum(1 for line in f)
     return lines
 
