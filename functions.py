@@ -1,16 +1,36 @@
+import os
 from rich.console import Console
 from rich.table import Table
+from rich.markdown import Markdown
+from time import sleep
 console = Console()
 
+def sleep_clear():
+    sleep(1)
+    os.system('clear')
+
+MARKDOWN = """
+# Welcome to the World Terminal of Poker!
+"""
+
+def introduction():
+    console.print(Markdown(MARKDOWN))
+    console.print('This is a game of chance. I wish you luck!\n')
+
 def ask_wager():
-    wager = int(input('What wager do you want?\nChoose 1, 2 or 3.\n'))
+    global wager
+    wager = int(input('What wager do you want?\nChoose 1, 2 or 3: '))
     if wager == 1:
-        console.print('That\s a bit cheap.. But okay.')
+        wager = 1
+        console.print('That\'s a bit cheap.. But okay.')
     elif wager == 2:
-        console.print('That\s a fair wager. I like it.')
+        wager = 2
+        console.print('That\'s a fair wager. I like it.')
     elif wager == 3:
-        console.print('What are waiting for! Let\s gamble!')
+        wager = 3
+        console.print('What are we waiting for! Let\'s gamble!')
     else:
+        wager = 2
         console.print('You entered an invalid wager. Defaulting to a wager of 2.')
     return wager
 
