@@ -1,4 +1,4 @@
-import time
+from time import sleep
 from rich.console import Console
 from rich.progress import Progress
 
@@ -9,7 +9,7 @@ with Progress() as progress:
 
     while not progress.finished:
         progress.update(task, advance=100)
-        time.sleep(0.1)
+        sleep(0.1)
 
 def count_cards():
     with open('./files/cards.txt', 'r') as f:
@@ -18,5 +18,7 @@ def count_cards():
 
 if count_cards() == 52:
     console.print('There are 52 cards in this deck.\nLet\'s start the game!')
+    sleep(2)
 else:
     console.print('Someone is tampering with the deck of cards.\nDo not play.')
+    sleep(4)
