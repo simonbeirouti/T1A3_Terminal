@@ -11,7 +11,7 @@ total_cards = []
 console = Console()
 os.system('clear')
 
-console.print(':robot: I am the card master...\n')
+console.print('\n:robot: I am the card master...\n')
 
 with Progress() as progress:
     task = progress.add_task("[green]Creating a new deck of cards...", total=52)
