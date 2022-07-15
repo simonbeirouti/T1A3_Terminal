@@ -1,8 +1,8 @@
 # T1A3 Terminal Application
 
-| Github                                                 | Notion                                                      |
-| ------------------------------------------------------ | ----------------------------------------------------------- |
-| [Repo](https://github.com/simonbeirouti/T1A3_Terminal) | [Kanban](https://github.com/users/simonbeirouti/projects/1) |
+| Github                                                 | Notion                                                                                                     |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| [Repo](https://github.com/simonbeirouti/T1A3_Terminal) | [Kanban](https://besimon.notion.site/483391bf4cea4922b3cd61c5d57a4969?v=b42e837be2 394dea8150f42f5dac8c58) |
 
 ## Coding style
 
