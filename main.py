@@ -56,6 +56,4 @@ for i in range(0, 12):
 
 introduction()
 ask_wager()
-for i in range(0, 10):
-    results_table(player, community, opponent)
-    sleep(2)
+results_table(player, community, opponent)
