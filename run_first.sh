@@ -6,6 +6,6 @@ python3 cards.py
 python3 error_checker.py
 
 # Run the main program to play the game.
-# python3 main.py
+python3 main.py
 
 
