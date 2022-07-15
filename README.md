@@ -1,19 +1,52 @@
 # T1A3 Terminal Application
 
-TODO - [Github Repo](#)
+| Github                                                 | Notion                                                      |
+| ------------------------------------------------------ | ----------------------------------------------------------- |
+| [Repo](https://github.com/simonbeirouti/T1A3_Terminal) | [Kanban](https://github.com/users/simonbeirouti/projects/1) |
 
 ## Coding style
 
-### Feature 1
+For the coding style, I am using the [Black](https://github.com/psf/black) formatter. It is built into Visual Studio via [this plugin](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). The benefits of this is it returns an error if you don't do what it likes.
 
-Variables and variable scopes
+## Installation steps
 
-### Feature 2
+1. `git clone https://github.com/simonbeirouti/T1A3_Terminal.git`
+2. `cd into T1A3_Terminal`
+3. `pip3 install rich`
+4. `chmod u+x run_first.sh`
+5. `./run_first.sh`
 
-Loops and conditional control structures
+## Features
 
-### Feature 3
+#### Automation
 
-Error handling
+Instead of running three files, I created a bash script that will run each one, one after another.
+
+#### Usage of the rich command line pacakge
+
+The focus around this was to use a python library that enables the developer to create a more exciting UX.
+
+#### Working with files
+
+I am wanting to work off generated files and also append further files with more information when it comes through.
 
 ## Implementation plan
+
+- Launch bash script to run python file and generate a csv of the cards to use in program // DONE
+- Ask for the user name
+  - Welcome them
+- Let them know what game they'll be playing
+  - Show some basic rules
+  - Hand rankings
+- Give player some money
+  - Generate a random two cards for player and component
+  - Remove the cards from the total available cards
+- Ask how much they want to bet
+- Deal the board
+  - Compare the results.
+  - Append score to a doc
+- Either reward to deduct from score
+  - If user reaches 0, show a bitcoin address for lols
+  - Don't stop the game until the player ends it
+- Handle errors throughout
+  - Check if there are 52 cards in the deck
