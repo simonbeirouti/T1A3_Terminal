@@ -1,6 +1,6 @@
 # import os
-from time import sleep
 import random
+from time import sleep
 from rich.console import Console
 from functions import *
 console = Console()
@@ -17,23 +17,26 @@ o_card_val = 0
 p_card_val = 0
 winner = ''
 
+player_tally = 0
+opponent_tally = 0
+
 file = open('./files/cards.txt', 'r')
 deck = file.read().splitlines()
 
 def ask_wager():
     global wager
-    wager = int(input('To play, you will need to choose a wager.\nChoose 1, 2 or 3: '))
+    wager = int(input('To play, you will need to choose a wager.\n\nChoose 1, 2 or 3: '))
     if wager == 1:
         wager = 1
-        console.print('That\'s a bit cheap.. But okay.\n\nLet\'s goooo!')
+        console.print('\n\nThat\'s a bit cheap.. But okay.\n\nLet\'s goooo!')
     elif wager == 2:
         wager = 2
-        console.print('That\'s a fair wager. I like it.\n\nLet\'s goooo!')
+        console.print('\nThat\'s a fair wager. I like it.\n\nLet\'s goooo!')
     elif wager == 3:
-        console.print('What are we waiting for! Let\'s gamble!\n\nLet\'s goooo!')
+        console.print('\nWhat are we waiting for! Let\'s gamble!\n\nLet\'s goooo!')
         wager = 3
     else:
-        console.print(f'Not a valid number. Defaulting to a wager of 2.\n\nLet\'s goooo!')
+        console.print(f'\nNot a valid number. Defaulting to a wager of 2.\n\nLet\'s goooo!')
         wager = 2
 
 def player_cards():
@@ -70,17 +73,19 @@ def opponent_card_value():
 
 def point_check():
     os.system('clear')
-    global winner, player_balance, opponent_balance
+    global winner, player_balance, opponent_balance, player_tally, opponent_tally
     if p_card_val > o_card_val:
         winner = 'Player'
         player_balance += wager
         opponent_balance -= wager
-        console.print(f'\nYou won! You now have {player_balance} chips.\n')
+        player_tally += 1
+        console.print(f'\nYou won! You now have {player_balance} chips.\n', style='green')
     elif p_card_val < o_card_val:
         winner = 'Opponent'
         opponent_balance += wager
         player_balance -= wager
-        console.print(f'\nYou lost! You now have {player_balance} chips.\n')
+        opponent_tally += 1
+        console.print(f'\nYou lost! You now have {player_balance} chips.\n', style='red')
     else:
         winner = 'Draw'
         console.print('\nIt\'s a draw!\n')
@@ -96,7 +101,9 @@ def game_flow():
     player_card_value()
     opponent_card_value()
     point_check()
-    results_table(player, opponent, winner)
+    p = ' '.join(player)
+    o = ' '.join(opponent)
+    results_table(p, o, winner, player_tally, opponent_tally)
 
 def choice_check():
     global continue_game
@@ -112,10 +119,13 @@ def choice_check():
 
 def balance_checker():
     if player_balance == 0:
-        console.print('\nNo more funds. Send bitcoin here:\nbc1qpv8cfxsmw4j7sjd3rvh9lucwk2al6pw6cwzu43\n')
+        os.system('clear')
+        console.print('\nNo more funds. Send bitcoin here:\n\nbc1qpv8cfxsmw4j7sjd3rvh9lucwk2al6pw6cwzu43\n')
+        opponent_tally += 1
         exit()
     elif opponent_balance == 0:
-        console.print('\nThe opponent has no chips left!\nYou win!\n')
+        os.system('clear')
+        console.print('\nThe opponent has no chips left!\n\nYou win!\n')
         exit()
     else:
         pass
@@ -123,6 +133,7 @@ def balance_checker():
 def main():
     introduction()
     ask_wager()
+    sleep(2)
 
     while continue_game:
         global player, opponent, p_card_val, o_card_val, winner
