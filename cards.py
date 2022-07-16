@@ -21,6 +21,6 @@ with Progress() as progress:
         time.sleep(0.05)
 
 with open('./files/cards.txt', 'w+') as f:
-    for i in range(len(cards)):
-        for j in range(len(suits)):
-            f.write(cards[i] + suits[j] + '\n')
+    for i in cards:
+        for j in suits:
+            f.write(i + j + '\n')
