@@ -5,13 +5,25 @@ from rich.markdown import Markdown
 console = Console()
 
 GAMETITLE = """
-# Welcome to the World Terminal of Poker!
+# World Terminal of Poker!
 """
 
-def introduction():
+FLIPS = """
+# Time for some flips!
+"""
+
+RESULTS = """
+# Time for some flips!
+"""
+
+def introduction(i):
     os.system('clear')
-    console.print(Markdown(GAMETITLE))
-    console.print('This is a game of chance. I wish you luck!\n')
+    if i == 'gane':
+        console.print(Markdown(GAMETITLE))
+    elif i == 'flips':
+        console.print(Markdown(FLIPS))
+    else:
+        console.print(Markdown(RESULTS))
 
 def results_table(player, opponent, winner, player_tally, opponent_tally):
     table = Table(title="Flips")
