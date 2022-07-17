@@ -2,6 +2,7 @@ import os
 import time
 from rich.console import Console
 from rich.progress import Progress
+from functions import introduction
 
 cards = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A')
 suits = ('♠️', '♦️', '♣️', '❤️')
@@ -10,6 +11,8 @@ total_cards = []
 
 console = Console()
 os.system('clear')
+
+introduction('I will now create a deck of cards.\n')
 
 console.print('\n:robot: I am the card master...\n')
 
