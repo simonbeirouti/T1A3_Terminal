@@ -4,6 +4,10 @@
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | [Repo](https://github.com/simonbeirouti/T1A3_Terminal) | [Kanban](https://besimon.notion.site/483391bf4cea4922b3cd61c5d57a4969?v=b42e837be2394dea8150f42f5dac8c58) |
 
+## Video
+
+![video here](./recording.gif)
+
 ## Coding style
 
 For the coding style, I am using the [Black](https://github.com/psf/black) formatter. It is built into Visual Studio via [this plugin](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). The benefits of this is it returns an error if you don't do what it likes.
@@ -45,7 +49,3 @@ I am wanting to work off generated files and also append further files with more
    - If yes, empty the values and run again.
      - Will offer option again until someone has no balance left.
    - If no, it will exit the game.
-
-## Video
-
-![video here](./recording.gif)
