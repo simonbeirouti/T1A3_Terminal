@@ -29,24 +29,3 @@ The focus around this was to use a python library that enables the developer to 
 #### Working with files
 
 I am wanting to work off generated files and also append further files with more information when it comes through.
-
-## Implementation plan
-
-- Launch bash script to run python file and generate a csv of the cards to use in program // DONE
-- Ask for the user name
-  - Welcome them
-- Let them know what game they'll be playing
-  - Show some basic rules
-  - Hand rankings
-- Give player some money
-  - Generate a random two cards for player and component
-  - Remove the cards from the total available cards
-- Ask how much they want to bet
-- Deal the board
-  - Compare the results.
-  - Append score to a doc
-- Either reward to deduct from score
-  - If user reaches 0, show a bitcoin address for lols
-  - Don't stop the game until the player ends it
-- Handle errors throughout
-  - Check if there are 52 cards in the deck
