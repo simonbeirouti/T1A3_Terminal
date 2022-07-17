@@ -13,7 +13,7 @@ FLIPS = """
 """
 
 RESULTS = """
-# Time for some flips!
+# It\'s game time!
 """
 
 def introduction(i):
